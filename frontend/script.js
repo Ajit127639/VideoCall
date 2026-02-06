@@ -1,4 +1,4 @@
-const socket = io("");
+const socket = io("https://videocall-wm7t.onrender.com");
 
 const pc = new RTCPeerConnection();
 
@@ -218,7 +218,7 @@ async function upload(kind) {
   fd.append("file", blob);
   fd.append("kind", kind);
 
-  const res = await fetch("https://videocallback-8uyp.onrender.com/", {
+  const res = await fetch("https://videocall-wm7t.onrender.com", {
     method: "POST",
     body: fd,
   });
@@ -235,7 +235,7 @@ async function transcribe() {
     return;
   }
 
-  const res = await fetch("hhttps://videocallback-8uyp.onrender.com/", {
+  const res = await fetch("https://videocall-wm7t.onrender.com", {
     method: "POST",
   });
   const j = await res.json();
@@ -246,7 +246,7 @@ async function summarize() {
   const text = document.getElementById("transcript").innerText;
   if (!text) return;
 
-  const res = await fetch("https://videocallback-8uyp.onrender.com/", {
+  const res = await fetch("https://videocall-wm7t.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),
