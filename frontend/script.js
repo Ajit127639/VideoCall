@@ -1,4 +1,4 @@
-const socket = io("https://videocallback-8uyp.onrender.com/");
+const socket = io("");
 
 const pc = new RTCPeerConnection();
 
